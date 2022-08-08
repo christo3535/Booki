@@ -1,0 +1,753 @@
+/*** VERSION DEKSTOP***/
+
+/*** GENERAL ***/
+@font-face {
+  font-family: "Raleway-Regular"; 
+  src: url("Raleway-Regular.ttf") format("truetype");
+}
+
+:root {
+  --blue: #0065fc;
+  --light-blue: #deebff;
+  --grey: #f2f2f2;
+}
+
+body {
+  font-family: "Raleway", sans-serif;
+  margin: 0;
+  font-size: 0.9rem;
+}
+
+h1 {
+  font-size: 110%;
+}
+
+h2 {
+  margin: 0;
+  padding: 0;
+  font-size: 100%;
+}
+
+h3 {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.etoile {
+  font-size: 0.6rem;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+
+
+/* WRAPPER */
+.wrapper {
+  width: 90%;
+  margin: 0 auto;
+}
+
+/*** Breakpoint intermédiaire ***/
+@media screen and (max-width: 1200px) {
+  .wrapper {
+    width: 900px;
+    margin: 0 auto;
+  }
+  footer {
+    padding: 5%;
+  }
+
+} 
+
+
+
+/*** HEADER ***/
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+header .logo img {
+  max-width: 120px;
+  margin-left: 15px;
+}
+
+header nav ul {
+  display: flex;
+  margin: 0px;
+  padding: 0px;
+  list-style: none;
+  justify-content: flex-end;
+}
+header nav ul a {
+  display: block;
+  padding: 30px;
+  border-top: 3px solid;
+  border-color: transparent;
+}
+
+header nav li a:hover,
+nav li :active {
+  color: var(--blue);
+  border-color: var(--blue);
+}
+/*** TITRES ***/
+
+.subtitle {
+  margin-bottom: 15px;
+  font-size: 100%;
+}
+
+/*** RECHERCHE ***/
+
+.search-form {
+  display: flex;
+}
+
+.search-input {
+  font-size: small;
+  border: 1px solid var(--grey);
+  outline: none;
+  padding: 10px;
+  color: black;
+  font-weight: bold;
+}
+
+.search-input::placeholder {
+  font-weight: 600;
+  color: black;
+}
+.search-form .fa-location-dot {
+  background-color: var(--grey);
+  border-radius: 15px 0px 0px 15px;
+  font-size: 16px;
+  padding: 14px 10px 10px 16px;
+  height: 22px;
+}
+
+.search-button {
+  background-color: var(--blue);
+  border: none;
+  border-radius: 0px 15px 15px 0px;
+  font-weight: bold;
+  padding: 10px 15px;
+  color: #fff;
+  cursor: pointer;
+}
+
+.search-button:hover {
+  background-color: #1b51a2;
+}
+
+.search-button-icon {
+  display: none;
+}
+
+/*** FILTRES ***/
+.filter {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  margin: 15px 0;
+}
+
+.filter-list {
+  display: flex;
+  align-items: center;
+  border: 2px solid var(--grey);
+  border-radius: 30px;
+  margin: 10px;
+  cursor: pointer;
+}
+
+.filter-list:hover {
+  background-color: var(--light-blue);
+}
+
+.filter-list .icon {
+  background-color: var(--light-blue);
+  height: 40px;
+  width: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 100%;
+}
+
+.filter-list i {
+  color: var(--blue);
+  display: inline-block;
+}
+
+.filter-list .text {
+  padding: 10px;
+  font-weight: bold;
+}
+
+.image {
+  display: flex;
+  margin-left: 15px;
+}
+
+/*** RESULTS MESSAGES ***/
+.results-messages {
+  display: flex;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.results-messages-icon {
+  border: 2px solid var(--grey);
+  color: var(--blue);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 7px;
+  width: 7px;
+  padding: 7px;
+  border-radius: 100%;
+  margin-right: 5px;
+}
+
+.results-messages-icon i {
+  font-size: 0.8rem;
+  align-self: center;
+  justify-content: center;
+  font-weight: bold;
+}
+
+/*** APPARTMENTS-LIST ***/
+
+.appartments-lists {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.appartments-lists .city {
+  width: 65%;
+  box-sizing: border-box;
+  padding: 20px;
+}
+
+.more {
+  margin-top: 20px;
+  font-weight: bold;
+}
+
+/*** LISTES APPARTEMENTS ***/
+
+.appartments-lists > div {
+  border: 1px solid transparent;
+  background-color: var(--grey);
+  border-radius: 15px;
+}
+
+/*** CARTES ***/
+.card,
+.card-large,
+.card-extra-large,
+.card-small,
+.card-med,
+.card-medium {
+  margin: 0;
+  padding: 0;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.15);
+  background-color: #fff;
+  border: 3px solid #fff;
+  margin-bottom: 20px;
+}
+
+#activite .card-medium,
+#activite .card-large,
+#activite .card-extra-large,
+#activite .card-small,
+#activite .card,
+#activite .card-med {
+  border: none;
+}
+.card-medium .card-image {
+  height: 190px;
+}
+
+.card-med .card-image {
+  height: 160px;
+}
+
+.card-extra-large .card-image {
+  height: 410px;
+}
+
+.card-large .card-image {
+  height: 250px;
+}
+
+.card-small .card-image {
+  height: 100px;
+}
+
+.card-image,
+p {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.titre {
+  font-weight: bolder;
+}
+
+.populaire .titre {
+  margin-bottom: 5px;
+}
+
+.card-image:hover {
+  transform: scale(1.07);
+}
+
+.card-image {
+  object-fit: cover;
+  height: 120px ;
+  transition: 0.5s;
+}
+
+.card-text {
+  font-weight: normal;
+  padding: 10px;
+}
+
+/*** ROWS ***/
+.row {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  width: 100%;
+}
+
+/*** COLUMNS ***/
+.column {
+  width: 30%;
+}
+
+.column-small {
+  width: 24%;
+}
+
+/*** POPULAIRES ***/
+
+.appartments-lists .popular {
+  width: 32%;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.appartments-lists .popular figure {
+  display: flex;
+}
+
+.populaire .card-text {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+.appartments-lists .city figure img {
+  height: 100px;
+}
+
+.appartments-lists .popular figure img {
+  width: 45%;
+  height: 130px;
+}
+/*** ACTIVITÉS MARSEILLE ***/
+#activite {
+  justify-content: space-between;
+  flex-wrap: wrap;
+  margin-bottom: 40px;
+}
+
+#activite h3 {
+  margin-top: 45px;
+}
+
+/*** Stars ***/
+.stars {
+  margin-top: 3px;
+  font-size: smaller;
+}
+
+.stars .fa-blue {
+  color: var(--blue);
+}
+
+.stars .fa-grey {
+  color: var(--grey);
+}
+
+/*** F00TER ***/
+footer {
+  
+  
+  background-color: var(--grey);
+  box-sizing: border-box;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  padding: 25px 0;
+}
+
+.footer-items {
+  width: 33.3%;
+}
+
+.footer-items ul {
+  list-style: none;
+  margin: 0px;
+  padding: 0%;
+  line-height: 35px;
+}
+
+.footer-container {
+  width: 90%;
+  display: flex;
+
+}
+
+
+/*** VERSION TABLETTES ***/
+@media screen and (max-width: 996px) {
+  .search-form {
+    padding: 0px 25px;
+    margin-bottom: 30px;
+  }
+
+  .search-button-icon {
+    display: block;
+  }
+
+  .search-button {
+    border-radius: 15px;
+    align-self: center;
+    justify-content: center;
+    height: 45px;
+    width: 45px;
+    font-size: larger;
+  }
+
+  .search-input {
+    border-left: none;
+    border-right: none;
+  }
+
+   .search-form .fa-location-dot {
+    height: 25px;
+  }
+
+  .search-button {
+    margin-left: -10px;
+  }
+
+  .search-button-text {
+    display: none;
+  }
+
+  .popular h3 {
+    margin-bottom: 35px;
+  }
+
+  .appartments-lists .city,
+  .appartments-lists .popular {
+    width: 90%;
+    margin-bottom: 15px;
+    border-radius: 0px;
+  }
+
+  .appartments-lists .popular {
+    order: -1;
+    border-radius: 0%;
+    padding: 25px;
+  }
+
+  /*** FILTRES ***/
+
+  .filter {
+    padding: 0 5px;
+  }
+
+  h2 {
+    padding-left: 20px;
+    font-size: 120%;
+  }
+  .filter .image {
+    flex-wrap: wrap;
+    box-sizing: border-box;
+  }
+
+  .filter-list .icon {
+    height: 50px;
+    width: 50px;
+    font-size: 150%;
+  }
+
+  .filter {
+    display: block;
+  }
+
+  .image {
+    display: flex;
+    align-items: center;
+  }
+
+  .appartments-lists .city,
+  .appartments-lists .popular {
+    width: 100%;
+    margin-bottom: 15px;
+    box-sizing: border-box;
+  }
+
+  #activite {
+    padding: 0px 25px;
+    width: 100%;
+    box-sizing: border-box;
+    margin-bottom: 15px;
+  }
+  /*** HEADER ***/
+  .wrapper:first-child {
+    padding: 25px 0px 0px 0px;
+    margin-bottom: 30px;
+  }
+
+  header {
+    flex-direction: column;
+  }
+
+  header nav {
+    display: flex;
+    justify-content: flex-start;
+    width: 100%;
+  }
+
+  header nav ul {
+    width: 100%;
+  }
+
+  header ul li {
+    width: 50%;
+  }
+
+  header nav ul a {
+    border-top: transparent;
+    border-bottom: 3px solid var(--grey);
+    padding: 20px;
+    width: 100%;
+    text-align: center;
+    box-sizing: border-box;
+  }
+
+  .logo {
+    align-self: center;
+    display: inline;
+  }
+
+  h1 {
+    font-size: 160%;
+  }
+
+  .heading {
+    padding: 0px 25px;
+    margin-bottom: 30px;
+  }
+
+  .search-button-text {
+    display: none;
+  }
+  .results-messages {
+    padding: 0 25px;
+  }
+  .wrapper {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 0px;
+  }
+
+  .city {
+    flex-wrap:nowrap;
+  }
+  .stars {
+    font-size: smaller;
+  }
+  .appartments-lists .city figure img{
+    height: 130px;
+  }
+  .more {
+    font-size: 120%;
+  }
+
+  #activite .row {
+    flex-direction: column;
+  }
+
+  #activite .column-small {
+    width: 100%;
+  }
+
+  #activite img {
+    height: 200px;
+  }
+  #activite {
+    padding: 0px 25px;
+  }
+  /***  FOOTER ***/
+
+  footer {
+    width: 100%;
+    align-items: flex-start;
+    padding-left: 25px;
+  }
+
+  footer {
+    flex-direction: column;
+  }
+  .footer-container {
+    flex-direction: column;
+  }
+
+  .footer-items {
+    flex-direction: column;
+  }
+}
+
+/*** VERSION SMARTPHONE ***/
+@media screen and (max-width: 768px) {
+  .heading {
+    padding: 0px 25px;
+  }
+  .row,
+  #activite {
+    flex-direction: column;
+  }
+
+   .search-form .fa-location-dot {
+    height: 26px;
+  }
+
+  .search-form .search-button {
+    height: 50px;
+  }
+
+  .column,
+  .column-small {
+    width: 100%;
+  }
+
+  .footer-items {
+    width: 90%;
+  }
+
+  .search-input {
+    width: 70%;
+    font-size: 120%;
+  }
+
+  .popular .populaire figure img {
+    width: 40%;
+  }
+  .populaire .card-text {
+    width: 150px;
+    margin-bottom: 10px;
+  }
+  .popular .titre {
+    margin-bottom: 10px;
+  }
+
+  #activite img {
+    height: 130px;
+  }
+
+  #activite {
+    margin-bottom: 25px;
+  }
+  #activite .titre {
+    padding: 0px 0px 10px 7px;
+  }
+  .appartments-lists .city {
+    background-color: white;
+    padding: 0px 25px;
+  }
+
+  /*** RESULTS MESSAGES ***/
+
+  .results-messages p {
+    font-size: 110%;
+    padding-top: 5px;
+    box-sizing: border-box;
+    margin-bottom: 20px;
+  }
+  .results-messages {
+    box-sizing: border-box;
+    padding: 0 25px;
+    width: 100%;
+  }
+  .results-messages-icon {
+    align-self: baseline;
+    width: 10px;
+    height: 10px;
+    justify-content: center;
+  }
+  .results-messages-icon i {
+    font-size: 100%;
+  }
+
+  h3 {
+    font-size: 160%;
+  }
+
+  /*** FOOTER ***/
+  footer {
+    padding: 0;
+  }
+
+  .footer-items {
+    margin: 15px;
+  }
+  footer h3 {
+    font-size: 130%;
+  }
+}
+
+@media screen and (max-width: 280px) {
+  h1 {
+    font-size: 120%;
+  }
+
+  h3 {
+    font-size: 120%;
+  }
+  .search-form .fa-location-dot {
+    height: 25px;
+  }
+  .search-input {
+    width: 50%;
+    font-size: 100%;
+  }
+  .search-form  .search-button{
+  font-size: medium;
+  border-radius: 10px;
+  height: 50px;
+  }
+  .appartments-lists .popular figure img {
+    height: 140px;
+    width: 35%;
+  }
+  .results-messages p {
+    font-size: 90%;
+  }
+}
